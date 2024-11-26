@@ -58,6 +58,12 @@ public class GameController : MonoBehaviour
         CameraController.CameraInstance.SwitchPlayer(ActivePlayerList[currentPlayerIndex].transform);   // Switch camera to new player
 
     }
+
+    public void ChangeDice(Dice activatedDice)
+    {
+        dice = activatedDice;
+    }
+    
     public void ThrowDice()
     {
         DiceRoll = dice.ThrowDice();
@@ -65,7 +71,6 @@ public class GameController : MonoBehaviour
         currentState.Exit();
         currentState = new MoveState();
         currentState.Enter();
-        
     }
 }
 

@@ -11,4 +11,9 @@ public abstract class Dice : Item
     {
         return Random.Range(BeginValue, EndValue + 1);
     }
+
+    public override void UseItem()
+    {
+        GameController.GameInstance.ChangeDice(this);
+    }
 }
